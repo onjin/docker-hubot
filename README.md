@@ -16,3 +16,12 @@
 ## build your own image
 
     docker build -t myhubot .
+
+
+## add and run `Slack` adapter
+
+    docker run -it --rm -v `pwd`/hubot:/home/hubot onjin/hubot npm install hubot-slack --save
+
+## run `Slack` integration
+
+    docker run -it --rm -v `pwd`/hubot:/home/hubot -e HUBOT_SLACK_TOKEN=xoxo-1234567890-IMHOBESTCOMMUNICATOR onjin/hubot bin/hubot --adapter slack
